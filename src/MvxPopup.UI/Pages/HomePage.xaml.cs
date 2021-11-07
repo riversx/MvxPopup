@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MvvmCross.Forms.Presenters.Attributes;
 using MvvmCross.Forms.Views;
 using MvxPopup.Core.ViewModels.Home;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
 
 namespace MvxPopup.UI.Pages
@@ -18,16 +15,17 @@ namespace MvxPopup.UI.Pages
         public HomePage()
         {
             InitializeComponent();
+            On<iOS>().SetUseSafeArea(true);
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            if (Application.Current.MainPage is NavigationPage navigationPage)
+            if (Xamarin.Forms.Application.Current.MainPage is Xamarin.Forms.NavigationPage navigationPage)
             {
                 navigationPage.BarTextColor = Color.White;
-                navigationPage.BarBackgroundColor = (Color)Application.Current.Resources["PrimaryColor"];
+                navigationPage.BarBackgroundColor = (Color)Xamarin.Forms.Application.Current.Resources["PrimaryColor"];
             }
         }
     }
