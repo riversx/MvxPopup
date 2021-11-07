@@ -1,8 +1,16 @@
-# Scope
+# Xamarin.Forms (iOS+Android) MvvmCross scaffolding with basic popup management
 
-This is a project to study how to create a custom popup.
+I started this project to learn:
 
-## Setup
+* How to crete a popup dialog using MvvmCross patterns
+
+## Screenshots 
+
+
+## Credits
+
+
+## Project Setup
 
 ```sh
 dotnet new --install MvxScaffolding.Templates
@@ -13,5 +21,8 @@ git add --all
 git commit -m "initial commit"
 ```
 
+#
 https://stackoverflow.com/questions/43279971/get-current-activity-xamarin-android
+
+## How to use it 
 
