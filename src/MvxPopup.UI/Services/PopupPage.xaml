@@ -1,0 +1,90 @@
+﻿<views:MvxContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:TypeArguments="viewModels:BasePopupViewModel"
+    xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+    xmlns:viewModels="clr-namespace:MvxPopup.Core.ViewModels;assembly=MvxPopup.Core"
+    x:Class="MvxPopup.UI.Services.PopupPage"
+    BackgroundColor="Transparent">
+
+    <AbsoluteLayout
+        x:Name="BackgroundPanel"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+
+        <!--overlay view-->
+        <StackLayout
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            BackgroundColor="DarkGray"
+            Opacity="0.85"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+        </StackLayout>
+
+        <!--float view-->
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Margin="10"
+            Padding="10"
+            BorderColor="DarkGray"
+            CornerRadius="5"
+            HasShadow="{Binding HasShadow}"
+            BackgroundColor="White">
+
+            <StackLayout
+                Orientation="Vertical"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start">
+                    <Label
+			            FontSize="Default"
+                        FontAttributes="Bold"
+			            TextColor="Black"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="CenterAndExpand"
+			            Text="{Binding Title}"/>
+                    <Frame
+                        IsVisible="{Binding IsCloseButtonVisible}"
+                        HeightRequest="25"
+                        WidthRequest="25"
+                        CornerRadius="0"
+                        Padding="0"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        BackgroundColor="DarkGray"
+                        HasShadow="False">
+                        <Frame.GestureRecognizers>
+                             <TapGestureRecognizer Command="{Binding CloseCommand}" />
+                        </Frame.GestureRecognizers>
+                        <Label
+			                FontSize="Micro"
+			                TextColor="White"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand"
+                            FontAttributes="Bold"
+			                Text="X">
+                        </Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout
+                    HeightRequest="1"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    BackgroundColor="DarkGray">
+                </StackLayout>
+                <StackLayout
+                    x:Name="PopupContent"
+                    Padding="10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
+</views:MvxContentPage>

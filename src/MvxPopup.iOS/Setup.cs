@@ -1,5 +1,8 @@
 using Microsoft.Extensions.Logging;
 using MvvmCross.Forms.Platforms.Ios.Core;
+using MvvmCross.IoC;
+using MvxPopup.Core.Services;
+using MvxPopup.iOS.Services;
 using Serilog;
 using Serilog.Extensions.Logging;
 
@@ -17,6 +20,12 @@ namespace MvxPopup.iOS
                 .CreateLogger();
 
             return new SerilogLoggerFactory();
+        }
+
+        protected override void InitializeFirstChance(IMvxIoCProvider iocProvider)
+        {
+            iocProvider.RegisterType<IPopupService, PopupService>();
+            base.InitializeFirstChance(iocProvider);
         }
     }
 }
