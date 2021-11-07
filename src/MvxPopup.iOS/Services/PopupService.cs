@@ -3,6 +3,7 @@ using MvvmCross.Commands;
 using MvxPopup.Core.Services;
 using MvxPopup.Core.ViewModels;
 using MvxPopup.UI.Services;
+using Serilog;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -21,10 +22,8 @@ namespace MvxPopup.iOS.Services
 				if (viewModel != null)
 				{
 					viewModel.CloseCommand = new MvxCommand(Close);
-
 					// build the popup page with native base
-					var popupPage = new PopupPage(viewModel);
-					popupPage.Parent = Xamarin.Forms.Application.Current.MainPage;
+					var popupPage = new PopupPage(Xamarin.Forms.Application.Current.MainPage, viewModel);
 
 					popupPage.Layout(new Rectangle(0, 0,
 						Xamarin.Forms.Application.Current.MainPage.Width,
@@ -38,7 +37,7 @@ namespace MvxPopup.iOS.Services
 			}
 			catch (Exception ex)
 			{
-				// Logger.TraceIt(nameof(IOSPopupService), $"Error:{ex.Message}", true, ex.StackTrace);
+				Log.Logger.Error(ex, $"{nameof(PopupService)}");
 			}
 		}
 

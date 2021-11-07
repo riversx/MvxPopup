@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using MvvmCross.Forms.Platforms.Android.Views;
 using MvxPopup.Core.ViewModels.Main;
 
@@ -22,7 +13,7 @@ namespace MvxPopup.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
+            Xamarin.Essentials.Platform.Init(this, bundle);
             base.OnCreate(bundle);
         }
     }

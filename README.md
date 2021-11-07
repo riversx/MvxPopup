@@ -13,3 +13,5 @@ git add --all
 git commit -m "initial commit"
 ```
 
+https://stackoverflow.com/questions/43279971/get-current-activity-xamarin-android
+

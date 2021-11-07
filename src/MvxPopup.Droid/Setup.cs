@@ -1,6 +1,9 @@
 using Android.App;
 using Microsoft.Extensions.Logging;
 using MvvmCross.Forms.Platforms.Android.Core;
+using MvvmCross.IoC;
+using MvxPopup.Core.Services;
+using MvxPopup.Droid.Services;
 using Serilog;
 using Serilog.Extensions.Logging;
 
@@ -24,6 +27,12 @@ namespace MvxPopup.Droid
                 .CreateLogger();
 
             return new SerilogLoggerFactory();
+        }
+
+        protected override void InitializeFirstChance(IMvxIoCProvider iocProvider)
+        {
+            iocProvider.RegisterType<IPopupService, PopupService>();
+            base.InitializeFirstChance(iocProvider);
         }
     }
 }
