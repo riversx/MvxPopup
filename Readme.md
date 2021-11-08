@@ -28,7 +28,29 @@ git add --all
 git commit -m "initial commit"
 ```
 
-#
+As you can see in the source code ...
+
+In the `.Core` project
+
+* Add file `/Services/IPopuopService.cs`
+* Add file `/ViewModels/BasePopupViewModel.cs`
+* Add file `/Viewmodels/.../YourCustomPopupViewModel.cs`
+
+In the `.Droid` project
+
+* Add file `/Services/PopupService.cs`
+* In file `/Views/MainActivity.cs` add line `Xamarin.Essentials.Platform.Init(this, bundle);`
+* In file `Setup.cs` add line `[...].RegisterType<IPopupService, PopupService>()`
+
+In `.iOS` project 
+
+* Add file `/Services/PopupService.cs`
+* In file `Setup.cs` add line `[...].RegisterType<IPopupService, PopupService>()`
+
+In `.UI` project 
+
+* Add file `/Services/PopupPage.xaml` &amp; `/Services/PopupPage.xaml.cs`
+* Add file `/Pages/.../YourCustomPopupView.xaml` &amp; `/Pages/.../YourCustomPopupView.xaml.cs`
 
 ## How to use it 
 
