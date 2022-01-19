@@ -4,7 +4,7 @@ I started this project to learn:
 
 * How to crete a popup dialog using MvvmCross patterns
 
-Test modify readme Fix 0015
+Test modify readme Fix 0016
 
 Qui voglio fare altro 
 Modifica su un altra branch
