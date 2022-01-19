@@ -10,7 +10,8 @@ Test modify readme Fix 0010100 altro
 Test modify readme Fix 0012
 >>>>>>> Stashed changes
 
-Qui voglio fare altro
+Qui voglio fare altro 
+Modifica su un altra branch
 
 
 Test altra riga
