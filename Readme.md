@@ -4,7 +4,11 @@ I started this project to learn:
 
 * How to crete a popup dialog using MvvmCross patterns
 
+<<<<<<< Updated upstream
 Test modify readme Fix 0010100 altro
+=======
+Test modify readme Fix 0012
+>>>>>>> Stashed changes
 
 Qui voglio fare altro
 
