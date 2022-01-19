@@ -4,7 +4,7 @@ I started this project to learn:
 
 * How to crete a popup dialog using MvvmCross patterns
 
-Test modify readme Fix 005 
+Test modify readme Fix 006
 
 Another test modify
 
