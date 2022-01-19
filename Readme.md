@@ -6,9 +6,7 @@ I started this project to learn:
 
 Test modify readme Fix 006
 
-Another test modify
-
-Test modifica in un altra branch
+Qui voglio fare altro
 
 ## Screenshots 
 
